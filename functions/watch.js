@@ -8,59 +8,6 @@ export async function onRequest(context) {
 
   const apiUrl = `https://inv.truehosting.net/api/v1/videos/${encodeURIComponent(id)}?alt=json`;
 
-    let title ="Untitled video";
-    let desc ="No Description";
-    let user ="No Author";
-try {
-    const res = await fetch(apiUrl);
-    if (res.ok) {
-      const data = await res.json();
-      title =
-        data.title ||
-        "Untitled video";
-    desc =
-        data.description ||
-        "No Description";
-    user =
-        data.author ||
-        "No Author";
-
-    } else {
-if (id === "debugger") {
-   title = "DEBUGGER";
-    desc = "DEBUGGER";
-    user = "DEBUGGER"; 
-    return new Response(html, {
-    headers: {
-      "Content-Type": "text/html; charset=UTF-8"
-    }
-  });
-}
-    const data = await res.json();
-    const error = data.error;
-
-    if (error === "This helps protect our community. Learn more") {return new Response("invidious error: Current Instance is blocked by YouTube.", {
-    status: 503,
-    headers: {
-      "Content-Type": "text/plain; charset=UTF-8"
-    }
-  })} else {
-    return new Response("invidious error: " + data.error, {
-    status: 503,
-    headers: {
-      "Content-Type": "text/plain; charset=UTF-8"
-    }
-  });}
-    }
-  } catch (e) {
-    
-    return new Response("page error: " + e, {
-    status: 503,
-    headers: {
-      "Content-Type": "text/plain; charset=UTF-8"
-    }
-  });
-}
 const html = `
   
 <!DOCTYPE html>
@@ -1025,6 +972,57 @@ Clear all videos from this list
 </body>
 </html>
   `;
+
+try {
+    const res = await fetch(apiUrl);
+    if (res.ok) {
+      const data = await res.json();
+      title =
+        data.title ||
+        "Untitled video";
+    desc =
+        data.description ||
+        "No Description";
+    user =
+        data.author ||
+        "No Author";
+
+    } else {
+if (id === "debugger") {
+   title = "DEBUGGER";
+    desc = "DEBUGGER";
+    user = "DEBUGGER"; 
+    return new Response(html, {
+    headers: {
+      "Content-Type": "text/html; charset=UTF-8"
+    }
+  });
+}
+    const data = await res.json();
+    const error = data.error;
+
+    if (error === "This helps protect our community. Learn more") {return new Response("invidious error: Current Instance is blocked by YouTube.", {
+    status: 503,
+    headers: {
+      "Content-Type": "text/plain; charset=UTF-8"
+    }
+  })} else {
+    return new Response("invidious error: " + data.error, {
+    status: 503,
+    headers: {
+      "Content-Type": "text/plain; charset=UTF-8"
+    }
+  });}
+    }
+  } catch (e) {
+    
+    return new Response("page error: " + e, {
+    status: 503,
+    headers: {
+      "Content-Type": "text/plain; charset=UTF-8"
+    }
+  });
+}
 
 
 

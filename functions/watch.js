@@ -8,7 +8,9 @@ export async function onRequest(context) {
 
   const apiUrl = `https://inv.truehosting.net/api/v1/videos/${encodeURIComponent(id)}?alt=json`;
 
-  let title = "Video unavailable";
+    let title ="Untitled video";
+    let desc ="No Description";
+    let user ="No Author";
 
   try {
     const res = await fetch(apiUrl);
@@ -22,7 +24,7 @@ export async function onRequest(context) {
         "No Description";
     user =
         data.author ||
-        "No Description";
+        "No Author";
 
     } else {
     const data = await res.json();

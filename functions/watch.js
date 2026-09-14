@@ -27,14 +27,15 @@ export async function onRequest(context) {
         "No Author";
 
     } else {
+if (id === "debugger") {
+   title = "DEBUGGER";
+    desc = "DEBUGGER";
+    user = "DEBUGGER"; 
+}
     const data = await res.json();
     const error = data.error;
-    if (id === "debugger") {
-    title = "DEBUGGER";
-    desc = "DEBUGGER";
-    user = "DEBUGGER";
-    }
-    if (error === "This helps protect our community. Learn more") {return new Response("invidious error:  Current Instance is blocked by YouTube.", {
+
+    if (error === "This helps protect our community. Learn more") {return new Response("Current Invidious Instance is blocked by YouTube.", {
     status: 503,
     headers: {
       "Content-Type": "text/plain; charset=UTF-8"

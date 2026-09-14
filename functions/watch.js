@@ -1,4 +1,5 @@
 export async function onRequest(context) {
+try {
   const url = new URL(context.request.url);
   const id = url.searchParams.get("v");
 
@@ -1033,6 +1034,14 @@ try {
     }
   });
 } catch (e) {
+  return new Response(e?.stack || e?.message || String(e), {
+    status: 503,
+    headers: {
+      "Content-Type": "text/plain; charset=UTF-8"
+    }
+  });
+}
+} catch(e) {
   return new Response(e?.stack || e?.message || String(e), {
     status: 503,
     headers: {

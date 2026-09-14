@@ -33,11 +33,11 @@ export async function onRequest(context) {
 
     if (error === "This helps protect our community. Learn more") {
       title = "invidious instance unexpectedly blocked by youtube"
-      description = "invidious instance unexpectedly blocked by youtube"
+      desc = "invidious instance unexpectedly blocked by youtube"
       user = "invidious instance unexpectedly blocked by youtube"
     } else {
     title = "invidious error: " + data.error;
-    description = "invidious error: " + data.error;
+    desc = "invidious error: " + data.error;
     user = data.error;}
 
   }

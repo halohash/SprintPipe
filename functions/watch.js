@@ -41,7 +41,7 @@ export async function onRequest(context) {
     }
   });}
     }
-    if (encodeURIComponent("id") === "debugger") {
+    if (videoid === "debugger") {
     title = "DEBUGGER";
     desc = "DEBUGGER";
     user = "DEBUGGER";

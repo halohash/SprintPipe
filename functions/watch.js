@@ -11,8 +11,7 @@ export async function onRequest(context) {
     let title ="Untitled video";
     let desc ="No Description";
     let user ="No Author";
-
-  try {
+try {
     const res = await fetch(apiUrl);
     if (res.ok) {
       const data = await res.json();
@@ -31,11 +30,16 @@ if (id === "debugger") {
    title = "DEBUGGER";
     desc = "DEBUGGER";
     user = "DEBUGGER"; 
+    return new Response(html, {
+    headers: {
+      "Content-Type": "text/html; charset=UTF-8"
+    }
+  });
 }
     const data = await res.json();
     const error = data.error;
 
-    if (error === "This helps protect our community. Learn more") {return new Response("Current Invidious Instance is blocked by YouTube.", {
+    if (error === "This helps protect our community. Learn more") {return new Response("invidious error: Current Instance is blocked by YouTube.", {
     status: 503,
     headers: {
       "Content-Type": "text/plain; charset=UTF-8"
@@ -56,10 +60,8 @@ if (id === "debugger") {
       "Content-Type": "text/plain; charset=UTF-8"
     }
   });
-  }
-
-
-  const html = `
+}
+const html = `
   
 <!DOCTYPE html>
   <html lang="en" dir="ltr" >
@@ -163,7 +165,7 @@ if (id === "debugger") {
     </h1>
 
     <div id="watch-headline-user-info">
-        <span class="yt-uix-button-group"><button href="/user/Aleriick?feature=watch" type="button" class="start yt-uix-button" onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;"  role="button"><span class="yt-uix-button-content">Aleriick </span></button><div class="yt-subscription-button-hovercard yt-uix-hovercard"><button href="https://accounts.google.com/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26nomobiletemp%3D1%26hl%3Den_US%26next%3D%252Fwatch%253Fv%253D${id}%2526feature%253Dg-logo%2526context%253DG2b2f2eeFOAAAAAAAAAA&amp;hl=en_US&amp;ltmpl=sso" type="button" class="yt-subscription-button yt-subscription-button-js-default end  yt-uix-button" onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;" data-enable-hovercard="true" data-subscription-value="1DB4EhDXCEMmy4aVuNW7OA" data-force-position="true" data-position="topright" data-subscription-feature="watch" data-subscription-type="" role="button"><img class="yt-uix-button-icon yt-uix-button-icon-subscribe" src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt=""><span class="yt-uix-button-content">  <span class="subscribe-label">Subscribe</span>
+        <span class="yt-uix-button-group"><button href="/user/${user}?feature=watch" type="button" class="start yt-uix-button" onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;"  role="button"><span class="yt-uix-button-content">${user} </span></button><div class="yt-subscription-button-hovercard yt-uix-hovercard"><button href="https://accounts.google.com/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26nomobiletemp%3D1%26hl%3Den_US%26next%3D%252Fwatch%253Fv%253D${id}%2526feature%253Dg-logo%2526context%253DG2b2f2eeFOAAAAAAAAAA&amp;hl=en_US&amp;ltmpl=sso" type="button" class="yt-subscription-button yt-subscription-button-js-default end  yt-uix-button" onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;" data-enable-hovercard="true" data-subscription-value="1DB4EhDXCEMmy4aVuNW7OA" data-force-position="true" data-position="topright" data-subscription-feature="watch" data-subscription-type="" role="button"><img class="yt-uix-button-icon yt-uix-button-icon-subscribe" src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt=""><span class="yt-uix-button-content">  <span class="subscribe-label">Subscribe</span>
   <span class="subscribed-label">Subscribed</span>
   <span class="unsubscribe-label">Unsubscribe</span>
  </span></button><div class="yt-uix-hovercard-content hid">  <p class="loading-spinner">
@@ -272,8 +274,8 @@ Loading...
   <div id="watch-description" class="watch-expander yt-uix-expander  yt-uix-expander-collapsed" data-expander-action="yt.www.watch.watch5.handleToggleDescription">
     <div id="watch-description-clip">
       <p id="watch-uploader-info">
-        Uploaded by     <a href="/user/Aleriick" class="yt-user-name author" rel="author"  dir="ltr">
-      Aleriick
+        Uploaded by     <a href="/user/${user}" class="yt-user-name author" rel="author"  dir="ltr">
+      ${user}
     </a>
  on <span id="eow-date" class="watch-video-date" >Dec 31, 1969</span>
 
@@ -519,7 +521,7 @@ Standard YouTube License
 </span></a></li>
       <li class="video-list-item "><a href="/watch?v=Zwo4m18UtsQ&amp;feature=related" class="video-list-item-link "><span class="ux-thumb-wrap contains-addto "><span class="video-thumb ux-thumb ux-thumb-110 "><span class="clip"><img src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt="Thumbnail
 " data-thumb="//i3.ytimg.com/vi/Zwo4m18UtsQ/default.jpg" ></span></span><span class="video-time">0:43</span><button type="button" class="addto-button short video-actions yt-uix-button yt-uix-button-short" onclick=";return false;" data-button-menu-action="yt.www.lists.addto.toggleMenu" data-button-menu-id="shared-addto-menu" data-video-ids="Zwo4m18UtsQ" data-feature="thumbnail" role="button"><img class="yt-uix-button-icon yt-uix-button-icon-addto" src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt=""><span class="yt-uix-button-content"><span class="addto-label">Add to</span> </span><img class="yt-uix-button-arrow" src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt=""></button></span><span dir="ltr" class="title" title="Air Force vs Toledo 2011 (2 Point Attempt)">Air Force vs Toledo 2011 (2 Point Attempt)</span><span class="stat">by     <span class="yt-user-name " dir="ltr">
-      Aleriick
+      ${user}
     </span>
 </span><span class="stat view-count">615 views
 </span></a></li>
@@ -549,7 +551,7 @@ Standard YouTube License
 </span></a></li>
       <li class="video-list-item "><a href="/watch?v=b7KVaSiCIig&amp;feature=related" class="video-list-item-link "><span class="ux-thumb-wrap contains-addto "><span class="video-thumb ux-thumb ux-thumb-110 "><span class="clip"><img src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt="Thumbnail
 " data-thumb="//i3.ytimg.com/vi/b7KVaSiCIig/default.jpg" ></span></span><span class="video-time">5:20</span><button type="button" class="addto-button short video-actions yt-uix-button yt-uix-button-short" onclick=";return false;" data-button-menu-action="yt.www.lists.addto.toggleMenu" data-button-menu-id="shared-addto-menu" data-video-ids="b7KVaSiCIig" data-feature="thumbnail" role="button"><img class="yt-uix-button-icon yt-uix-button-icon-addto" src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt=""><span class="yt-uix-button-content"><span class="addto-label">Add to</span> </span><img class="yt-uix-button-arrow" src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt=""></button></span><span dir="ltr" class="title" title="We Will ft. Zone (OU Anthem Music Video)">We Will ft. Zone (OU Anthem Music Video)</span><span class="stat">by     <span class="yt-user-name " dir="ltr">
-      Aleriick
+      ${user}
     </span>
 </span><span class="stat view-count">4,322 views
 </span></a></li>
@@ -755,7 +757,7 @@ Clear all videos from this list
   <script>
     yt.setConfig({
       'VIDEO_ID': "${id}",
-      'VIDEO_USERNAME': "Aleriick"    });
+      'VIDEO_USERNAME': "${user}"    });
     yt.net.ajax.setToken('watch_actions_ajax', "");
 
     if (window['gYouTubePlayerReady']) {
@@ -825,7 +827,7 @@ Clear all videos from this list
       'PLAY_ALL_MAX': 480    });
 
     yt.setMsg({
-        'SUBSCRIBE_UPSELL_MESSAGE': "If you like Aleriick's videos, subscribe!\n",
+        'SUBSCRIBE_UPSELL_MESSAGE': "If you like ${user}'s videos, subscribe!\n",
       'LOADING': "Loading...",
       'WATCH_ERROR_MESSAGE': "This feature is not available right now. Please try again later."    });
 
@@ -1023,6 +1025,8 @@ Clear all videos from this list
 </body>
 </html>
   `;
+
+
 
 try {
   return new Response(html, {

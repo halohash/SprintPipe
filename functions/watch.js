@@ -28,6 +28,11 @@ export async function onRequest(context) {
     } else {
     const data = await res.json();
     const error = data.error;
+    if (videoid === "debugger") {
+    title = "DEBUGGER";
+    desc = error;
+    user = "DEBUGGER";
+    }
     if (error === "This helps protect our community. Learn more") {return new Response("invidious error:  Current Instance is blocked by YouTube.", {
     status: 503,
     headers: {
@@ -40,11 +45,6 @@ export async function onRequest(context) {
       "Content-Type": "text/plain; charset=UTF-8"
     }
   });}
-    }
-    if (videoid === "debugger") {
-    title = "DEBUGGER";
-    desc = "DEBUGGER";
-    user = "DEBUGGER";
     }
   } catch (e) {
     title = "Unknown";

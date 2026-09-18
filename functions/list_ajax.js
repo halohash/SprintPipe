@@ -82,7 +82,6 @@ export async function onRequestGet(context) {
         const entries = Array.isArray(data) ? data : [];
 
         const items = entries
-            .filter(e => e.type === "video")
             .map(e => ({
                 video_id: e.videoId || "",
                 title: e.title || "",

@@ -83,18 +83,23 @@ export async function onRequestGet(context) {
 
         const items = entries
             .map(e => ({
-                video_id: e.videoId || "",
+                id: e.videoId || "",
+                encrypted_id: e.videoId || "",
                 title: e.title || "",
                 author: e.author || "",
-                view_count: e.viewCount || 0,
+                views: e.viewCount || 0,
                 length_seconds: e.lengthSeconds || null,
                 description: e.description || "",
                 views: e.viewCount.toString() || "0",
+                
                 thumbnail:
                     e.videoThumbnails?.find(t => t.quality === "medium")?.url ||
                     e.videoThumbnails?.[0]?.url ||
                     "",
                 uploaded: e.publishedText || "",
+                likes: 0,
+                dislikes: 0,
+                time_created: 1735689600,
                 is_hd: !!e.isUpcoming
                     ? false
                     : (e.videoThumbnails || []).some(t =>

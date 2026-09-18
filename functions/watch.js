@@ -157,7 +157,7 @@ export async function onRequest(context) {
     </h1>
 
     <div id="watch-headline-user-info">
-        <span class="yt-uix-button-group"><button href="/user/Aleriick?feature=watch" type="button" class="start yt-uix-button" onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;"  role="button"><span class="yt-uix-button-content">Aleriick </span></button><div class="yt-subscription-button-hovercard yt-uix-hovercard"><button href="https://accounts.google.com/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26nomobiletemp%3D1%26hl%3Den_US%26next%3D%252Fwatch%253Fv%253D${id}%2526feature%253Dg-logo%2526context%253DG2b2f2eeFOAAAAAAAAAA&amp;hl=en_US&amp;ltmpl=sso" type="button" class="yt-subscription-button yt-subscription-button-js-default end  yt-uix-button" onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;" data-enable-hovercard="true" data-subscription-value="1DB4EhDXCEMmy4aVuNW7OA" data-force-position="true" data-position="topright" data-subscription-feature="watch" data-subscription-type="" role="button"><img class="yt-uix-button-icon yt-uix-button-icon-subscribe" src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt=""><span class="yt-uix-button-content">  <span class="subscribe-label">Subscribe</span>
+        <span class="yt-uix-button-group"><button href="/user/${user}?feature=watch" type="button" class="start yt-uix-button" onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;"  role="button"><span class="yt-uix-button-content">${user} </span></button><div class="yt-subscription-button-hovercard yt-uix-hovercard"><button href="https://accounts.google.com/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26nomobiletemp%3D1%26hl%3Den_US%26next%3D%252Fwatch%253Fv%253D${id}%2526feature%253Dg-logo%2526context%253DG2b2f2eeFOAAAAAAAAAA&amp;hl=en_US&amp;ltmpl=sso" type="button" class="yt-subscription-button yt-subscription-button-js-default end  yt-uix-button" onclick=";window.location.href=this.getAttribute(&#39;href&#39;);return false;" data-enable-hovercard="true" data-subscription-value="1DB4EhDXCEMmy4aVuNW7OA" data-force-position="true" data-position="topright" data-subscription-feature="watch" data-subscription-type="" role="button"><img class="yt-uix-button-icon yt-uix-button-icon-subscribe" src="//s.ytimg.com/yt/img/pixel-vfl3z5WfW.gif" alt=""><span class="yt-uix-button-content">  <span class="subscribe-label">Subscribe</span>
   <span class="subscribed-label">Subscribed</span>
   <span class="unsubscribe-label">Unsubscribe</span>
  </span></button><div class="yt-uix-hovercard-content hid">  <p class="loading-spinner">
@@ -266,8 +266,8 @@ Loading...
   <div id="watch-description" class="watch-expander yt-uix-expander  yt-uix-expander-collapsed" data-expander-action="yt.www.watch.watch5.handleToggleDescription">
     <div id="watch-description-clip">
       <p id="watch-uploader-info">
-        Uploaded by     <a href="/user/Aleriick" class="yt-user-name author" rel="author"  dir="ltr">
-      Aleriick
+        Uploaded by     <a href="/user/${user}" class="yt-user-name author" rel="author"  dir="ltr">
+      ${user}
     </a>
  on <span id="eow-date" class="watch-video-date" >Dec 31, 1969</span>
 
@@ -571,7 +571,7 @@ Clear all videos from this list
   <script>
     yt.setConfig({
       'VIDEO_ID': "${id}",
-      'VIDEO_USERNAME': "Aleriick"    });
+      'VIDEO_USERNAME': "${user}"    });
     yt.net.ajax.setToken('watch_actions_ajax', "");
 
     if (window['gYouTubePlayerReady']) {
@@ -641,7 +641,7 @@ Clear all videos from this list
       'PLAY_ALL_MAX': 480    });
 
     yt.setMsg({
-        'SUBSCRIBE_UPSELL_MESSAGE': "If you like Aleriick's videos, subscribe!\n",
+        'SUBSCRIBE_UPSELL_MESSAGE': "If you like ${user}'s videos, subscribe!\n",
       'LOADING': "Loading...",
       'WATCH_ERROR_MESSAGE': "This feature is not available right now. Please try again later."    });
 

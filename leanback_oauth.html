@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube</title>
+  </head>
+  <body>
+    
+    <script  src="oauth.js" data-loaded="true"></script>
+
+  <script>
+  yt.pubsub.subscribe('init', function() {
+    yt.www.leanbackoauth.init();
+      yt.setAjaxToken('leanback_actions', "1bCQ38Wjt5sSsGdHXR3HvdROBvt8MTM1MDAyNTI4NUAxMzQ5OTM4ODg1");
+  });
+  </script>
+
+  </body>
+</html>

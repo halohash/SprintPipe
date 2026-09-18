@@ -3,7 +3,7 @@ export async function onRequest(context) {
     
   const url = new URL(context.request.url);
   const id = url.searchParams.get("v");
-
+  const next_video_title = "sprintpipe"
   if (!id) {
     return Response.redirect(new URL("/", context.request.url).toString(), 301);
   }

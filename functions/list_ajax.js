@@ -82,7 +82,7 @@ export async function onRequestGet(context) {
         const entries = Array.isArray(data) ? data : [];
 
         const items = entries
-            .filter(e => e.type === "channel")
+            .filter(e => e.type !== "channel")
             .map(e => ({
                 id: e.videoId || "",
                 encrypted_id: e.videoId || "",

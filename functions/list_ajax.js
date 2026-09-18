@@ -89,7 +89,7 @@ export async function onRequestGet(context) {
                 view_count: e.viewCount || 0,
                 length_seconds: e.lengthSeconds || null,
                 description: e.description || "",
-                views: e.viewCount || 0,
+                views: e.viewCount.toString() || "0",
                 thumbnail:
                     e.videoThumbnails?.find(t => t.quality === "medium")?.url ||
                     e.videoThumbnails?.[0]?.url ||

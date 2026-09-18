@@ -189,6 +189,7 @@ Loading...
   <div id="watch-video-container">
     <div id="watch-video" >
           <script>
+      window.yt.timing.tick = console.log;
       if (window.yt.timing) {
         yt.timing.tick('bf');
       }

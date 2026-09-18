@@ -54,7 +54,7 @@ export async function onRequest(context) {
   }
 
 
-  const html = `
+  const html = String.raw`
   
 <!DOCTYPE html>
   <html lang="en" dir="ltr" >

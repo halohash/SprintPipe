@@ -21,9 +21,9 @@ export async function onRequestGet(context) {
     const feedMap = {
         LBpop: "popular",
         "FLGNbesWrtvHPgtpTtfW4OhA": "popular",
-        "FLeNZlh03MyUkjRlLFpVQxsg": "popular",
+        "FLeNZlh03MyUkjRlLFpVQxsg": "search?q=youtube%20tv%20before:2015",
       "FLa-TCr366LR16OTaUrjb9bw":"popular",
-"FLgPHCan3Xcw_ejiea7aXv4w":"popular?type=gaming",
+"FLgPHCan3Xcw_ejiea7aXv4w":"search?q=nexus%20s%204g",
 "FLk2SIoe1jfycK09cBWiJyrA":"popular"
     };
 

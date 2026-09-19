@@ -1077,7 +1077,7 @@ ${page.map(entryXML).join("\n")}
 
 
     const data = await fetchInvidious(
-      `/api/v1/channels/${encodeURIComponent(userId)}/videos?page=${pageNumber}&sort_by=newest`
+      `/api/v1/channels/UC${encodeURIComponent(userId)}/videos?page=${pageNumber}&sort_by=newest`
     );
 
     /*

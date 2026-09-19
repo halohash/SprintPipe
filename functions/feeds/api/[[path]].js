@@ -1060,99 +1060,98 @@ ${page.map(entryXML).join("\n")}
      */
 
     if (
-      route[0] === "users" &&
-      route[2] === "uploads"
-    ) {
-      const user =
-        route[1];
+  route[0] === "users" &&
+  route[1] &&
+  route[2] === "uploads"
+) {
+  const userId = route[1];
 
-      let list =
-        [];
+  let list = [];
 
-      /*
-       * Try to resolve the channel through
-       * Invidious.
-       */
+  try {
+    const pageNumber = Math.max(
+      Math.floor((startIndex - 1) / maxResults) + 1,
+      1
+    );
 
-      try {
-        const search =
-          await fetchInvidious(
-            `/api/v1/search?q=${encodeURIComponent(user)}&type=channel`
-          );
 
-        const channel =
-          Array.isArray(search)
-            ? search.find(
-                x =>
-                  x.authorId &&
-                  (
-                    x.author ||
-                    ""
-                  ).toLowerCase() ===
-                  user.toLowerCase()
-              )
-            : null;
 
-        if (channel?.authorId) {
-          const channelVideos =
-            await fetchInvidious(
-              `/api/v1/channels/${encodeURIComponent(channel.authorId)}/videos`
-            );
+    const data = await fetchInvidious(
+      `/api/v1/channels/${encodeURIComponent(userId)}/videos?page=${pageNumber}&sort_by=newest`
+    );
 
-          if (
-            Array.isArray(channelVideos)
-          ) {
-            list =
-              channelVideos
-                .filter(
-                  x => x.videoId
-                )
-                .map(
-                  makeGDataVideo
-                )
-                .filter(Boolean);
+    /*
+     * Current Invidious versions return:
+     *
+     * {
+     *   videos: [...],
+     *   continuation: "..."
+     * }
+     *
+     * Older versions may return the array directly.
+     */
+
+    const channelVideos =
+      Array.isArray(data)
+        ? data
+        : Array.isArray(data?.videos)
+          ? data.videos
+          : [];
+
+    list = channelVideos
+      .filter(v => v && v.videoId)
+      .map(makeGDataVideo)
+      .filter(Boolean);
+
+  } catch (error) {
+    console.error(
+      "Failed to fetch channel uploads:",
+      error
+    );
+
+    return withCORS(
+      new Response(
+        "Unable to fetch channel uploads",
+        {
+          status: 502,
+          headers: {
+            "content-type":
+              "text/plain; charset=UTF-8"
           }
         }
-      } catch {
-        /*
-         * Fall back to videos already loaded.
-         */
-        list =
-          videos.filter(
-            v =>
-              getAuthor(v)
-                .toLowerCase() ===
-              user.toLowerCase()
-          );
-      }
+      )
+    );
+  }
 
-      const page =
-        paginate(list);
+  /*
+   * Apply the old GData pagination.
+   */
+  const page = paginate(list);
 
-      return alt === "json"
-        ? respondJSON(
-            buildFeed(
-              page,
-              list.length,
-              `${user} uploads`
-            )
-          )
-        : withCORS(
-            new Response(
-              buildXML(
-                page,
-                list.length,
-                `${user} uploads`
-              ),
-              {
-                headers: {
-                  "content-type":
-                    "application/xml; charset=UTF-8"
-                }
-              }
-            )
-          );
-    }
+  return alt === "json"
+    ? respondJSON(
+        buildFeed(
+          page,
+          list.length,
+          `${userId} uploads`
+        )
+      )
+    : withCORS(
+        new Response(
+          buildXML(
+            page,
+            list.length,
+            `${userId} uploads`
+          ),
+          {
+            headers: {
+              "content-type":
+                "application/xml; charset=UTF-8"
+            }
+          }
+        )
+      );
+}
 
     /*
      * ---------------------------------------------------------

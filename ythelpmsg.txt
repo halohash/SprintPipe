@@ -1,0 +1,5 @@
+YouTube Help/YouTube Viewers - Rare Links
+https://www.youtube.com/watch?v=d3RncG6uHxE - used when an version of youtube isn't supported anymore during 2015, 2016, or 2017, idk
+https://www.youtube.com/watch?v=UKY3scPIMd8 - used when gdata.youtube.com was getting deprecated. still seen on https://feeds.feedburner.com/youtube/
+https://www.youtube.com/watch?v=9xp1XWmJ_Wo - used for unknown reasons
+https://www.youtube.com/watch?v=aQvGIIdgFDM - used when a video isn't supported on an app

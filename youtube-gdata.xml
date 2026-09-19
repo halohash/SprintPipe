@@ -1,0 +1,68 @@
+<?xml
+version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' xmlns:yt='http://gdata.youtube.com/schemas/2007' xmlns:media='http://search.yahoo.com/mrss/'>
+    <id>http://gdata.youtube.com/feeds/api/standardfeeds/US/most_viewed</id>
+    <updated>2015-05-14T02:11:05.188Z</updated>
+    <category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/>
+    <title type='text'>Most Popular</title>
+    <logo>http://www.gstatic.com/youtube/img/logo.png</logo>
+    <link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/standardfeeds/US/most_viewed'/>
+    <link rel='http://schemas.google.com/g/2005#batch' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/standardfeeds/US/most_viewed/batch'/>
+    <link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/standardfeeds/US/most_viewed?start-index=1&amp;max-results=25&amp;time=this_week'/>
+    <author>
+        <name>YouTube</name>
+        <uri>http://www.youtube.com/</uri>
+    </author>
+    <generator version='2.1' uri='http://gdata.youtube.com'>YouTube data API</generator>
+    <openSearch:totalResults>1</openSearch:totalResults>
+    <openSearch:startIndex>1</openSearch:startIndex>
+    <openSearch:itemsPerPage>25</openSearch:itemsPerPage>
+    <entry>
+        <id>http://gdata.youtube.com/feeds/api/videos/UKY3scPIMd8</id>
+        <published>2015-04-17T15:23:22.000Z</published>
+        <updated>2015-05-14T02:10:42.000Z</updated>
+        <category scheme='http://schemas.google.com/g/2005#kind' term='http://gdata.youtube.com/schemas/2007#video'/>
+        <category scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='Howto' label='Howto &amp; Style'/>
+        <title type='text'>https://youtube.com/devicesupport</title>
+        <content type='application/x-shockwave-flash' src='http://www.youtube.com/v/UKY3scPIMd8?version=3&amp;f=standard&amp;app=youtube_gdata'/>
+        <link rel='alternate' type='text/html' href='http://www.youtube.com/watch?v=UKY3scPIMd8&amp;feature=youtube_gdata'/>
+        <link rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/UKY3scPIMd8/related'/>
+        <link rel='http://gdata.youtube.com/schemas/2007#mobile' type='text/html' href='http://m.youtube.com/details?v=UKY3scPIMd8'/>
+        <link rel='self' type='application/atom+xml' href='http://gdata.youtube.com/feeds/api/videos/UKY3scPIMd8'/>
+        <author>
+            <name>YouTube Help</name>
+            <uri>http://gdata.youtube.com/feeds/api/users/YouTubeHelp</uri>
+        </author>
+        <yt:accessControl action='comment' permission='denied'/>
+        <yt:accessControl action='commentVote' permission='allowed'/>
+        <yt:accessControl action='videoRespond' permission='moderated'/>
+        <yt:accessControl action='rate' permission='denied'/>
+        <yt:accessControl action='embed' permission='allowed'/>
+        <yt:accessControl action='list' permission='denied'/>
+        <yt:accessControl action='autoPlay' permission='allowed'/>
+        <yt:accessControl action='syndicate' permission='allowed'/>
+        <yt:hd/>
+        <media:group>
+            <media:category label='Howto &amp; Style' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>Howto</media:category>
+            <media:content url='http://www.youtube.com/v/UKY3scPIMd8?version=3&amp;f=standard&amp;app=youtube_gdata' type='application/x-shockwave-flash' medium='video' isDefault='true' expression='full' duration='236' yt:format='5'/>
+            <media:content url='rtsp://r1---sn-5hn7su76.c.youtube.com/CiQLENy73wIaGwnfMcjDsTemUBMYDSANFEgGUghzdGFuZGFyZAw=/0/0/0/video.3gp' type='video/3gpp' medium='video' expression='full' duration='236' yt:format='1'/>
+            <media:content url='rtsp://r1---sn-5hn7su76.c.youtube.com/CiQLENy73wIaGwnfMcjDsTemUBMYESARFEgGUghzdGFuZGFyZAw=/0/0/0/video.3gp' type='video/3gpp' medium='video' expression='full' duration='236' yt:format='6'/>
+            <media:credit role='uploader' scheme='urn:youtube' yt:display='YouTube Help'>youtubehelp</media:credit>
+            <media:description type='plain'>https://youtube.com/devicesupport
+http://m.youtube.com</media:description>
+            <media:keywords/>
+            <media:player url='http://www.youtube.com/watch?v=UKY3scPIMd8&amp;feature=youtube_gdata_player'/>
+            <media:thumbnail url='http://i.ytimg.com/vi/UKY3scPIMd8/0.jpg' height='360' width='480' time='00:01:58'/>
+            <media:thumbnail url='http://i.ytimg.com/vi/UKY3scPIMd8/1.jpg' height='90' width='120' time='00:00:59'/>
+            <media:thumbnail url='http://i.ytimg.com/vi/UKY3scPIMd8/2.jpg' height='90' width='120' time='00:01:58'/>
+            <media:thumbnail url='http://i.ytimg.com/vi/UKY3scPIMd8/3.jpg' height='90' width='120' time='00:02:57'/>
+            <media:title type='plain'>https://youtube.com/devicesupport</media:title>
+            <yt:aspectRatio>widescreen</yt:aspectRatio>
+            <yt:duration seconds='236'/>
+            <yt:uploaded>2015-04-17T15:23:22.000Z</yt:uploaded>
+            <yt:uploaderId>UCMDQxm7cUx3yXkfeHa5zJIQ</yt:uploaderId>
+            <yt:videoid>UKY3scPIMd8</yt:videoid>
+        </media:group>
+        <yt:statistics favoriteCount='0' viewCount='12180171'/>
+    </entry>
+</feed>

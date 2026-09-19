@@ -17772,7 +17772,7 @@ if (id) {
     var video = document.querySelector('.html5-video-container .video-stream.html5-main-video');
 
     if (video) {
-        video.src = "https://gdatav2.truehosting.net/embed/" + id;
+        video.src = "https://inv.truehosting.net/embed/" + id + "?raw=1";
         video.load();
         video.play();
         return;
@@ -45561,7 +45561,7 @@ if (id) {
 
     if ((!formats || !formats.length) && id) {
       return [{
-        url: "https://gdatav2.truehosting.net/embed/" + id,
+        url: "https://inv.truehosting.net/embed/" + id + "?raw=1",
         mimeType: "video/mp4"
       }];
     }

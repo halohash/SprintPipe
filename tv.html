@@ -14,6 +14,84 @@
   <body>
     <div id="loader"></div>
     <div id="leanback"></div>
+    <div id="video-player" class="html5-video-player" style="display: none;">
+      <div class="html5-video-info-panel hid">
+    <span class="html5-video-info-panel-close" role="button" title="close">[x]</span>
+    <div class="html5-video-info-panel-content"></div>
+    <div class="html5-video-info-panel-template hid">
+      <table class="html5-video-info-table">
+        <tr><th>Video ID:</th><td>__videoId__</td></tr>
+        <tr><th>Dimensions:</th><td>__videoElementWidth__ x __videoElementHeight__</td></tr>
+        <tr><th>Resolution:</th><td>__videoWidth__ x __videoHeight__</td></tr>
+        <tr><th>Volume:</th><td>__volume__%</td></tr>
+        <tr><th>Stream Type:</th><td>__streamType__</td></tr>
+        <tr><th>Mime Type:</th><td>__mime__</td></tr>
+        <tr><th>DASH:</th><td>__dash__</td></tr>
+        <tr><th>DRM:</th><td>__drmFlavor__ / __drmKeySystem__</td></tr>
+      </table>
+      &nbsp;
+      <table class="html5-video-info-table html5-video-element-info-table">
+        <tr><th>Decoded Frames</th><th>Dropped Frames</th><th>Parsed Frames</th><th>Presented Frames</th></tr>
+        <tr><td>__decodedFrames__</td><td>__droppedFrames__</td><td>__parsedFrames__</td><td>__presentedFrames__</td></tr>
+        <tr><th>Video Bytes Decoded</th><th>Audio Bytes Decoded</th><th>Painted Frames</th><th>Paint Delay</th></tr>
+        <tr><td>__videoBytesDecoded__</td><td>__audioBytesDecoded__</td><td>__paintedFrames__</td><td>__paintDelay__</td></tr>
+      </table>
+    </div>
+  </div>
+
+    <div class="html5-video-container">
+        <div class="html5-video-content"></div>
+
+        <div class="video-ads">
+    <div class="video-ad-status-bar">
+      <div class="video-ad-label">Advertisement</div>
+      <div class="video-ad-time-left"></div>
+        <div class="html5-progress-bar html5-stop-propagation">
+    <div class="html5-ad-progress-list html5-progress-list html5-progress-item"></div>
+  </div>
+
+    </div>
+    <div class="ad-container"></div>
+  </div>
+
+    </div>
+    <div class="html5-video-controls"></div>
+      <div id="html5-player-messages" class="hid">
+    <div id="HTML5_DEFAULT_FALLBACK">This video is currently unavailable.</div>
+    <div id="HTML5_NO_AVAILABLE_FORMATS_FALLBACK">This video format is not supported.</div>
+    <div id="FLASH_FALLBACK">The Adobe Flash Player is required for video playback. <br> <a href="https://web.archive.org/web/20130311132549/http://get.adobe.com/flashplayer/">Get the latest Flash Player</a></div>
+    <div id="DEVICE_FALLBACK">Sorry, this video is not available on this device.</div>
+    <div id="HTML5_EMBED_MIN_SIZE_MESSAGE">Video player is too small.</div>
+    <div id="LEARN_MORE"></div>
+
+    <div id="HTML5_SPEED_NORMAL">Normal</div>
+    <div id="HTML5_QUALITY_SETTING">quality</div>
+    <div id="HTML5_SPEED_SETTING">speed</div>
+    <div id="HTML5_VOLUME_SETTING">volume</div>
+    <div id="HTML5_VOLUME_MUTED">muted</div>
+    <div id="HTML5_VOLUME_MUTE">mute</div>
+    <div id="HTML5_VOLUME_UNMUTE">unmute</div>
+    <div id="HTML5_CONTROL_TOGGLE">toggle</div>
+
+    <div id="HTML5_SUBS_TRANSCRIBED">transcribed</div>
+      <div id="HTML5_SUBS_ASR">automatic captions</div>
+    <div id="VISIT_ADVERTISERS_SITE">Visit advertiser's site</div>
+    <div id="FRESCA_STARTING_SOON_MESSAGE">Starting soon...</div>
+    <div id="FRESCA_COMPLETE_MESSAGE">Thanks for watching!</div>
+    <div id="FRESCA_STAND_BY_MESSAGE">Please stand by.</div>
+
+    <div id="ERROR_CANNOT_ACTIVATE_RENTAL">An error occurred when activating your rental. Please reload this page or try again later.</div>
+    <div id="ERROR_NOT_SIGNED_IN">Please sign in to resume watching.</div>
+    <div id="ERROR_RENTAL_EXPIRED">Your video rental has expired.</div>
+    <div id="ERROR_STOPPED_BY_ANOTHER_PLAYBACK">Your account is playing this video in another location. Please reload this page to resume watching</div>
+    <div id="ERROR_UNUSUAL_ACTIVITY">Due to unusual account activity, this video is not currently available.</div>
+    <div id="ERROR_STREAMING_UNAVAILABLE">Video playback is unavailable right now because this video has been downloaded for offline viewing</div>
+    <div id="ERROR_LICENSE">Sorry, there was an error licensing this video.</div>
+
+    <div id="REMOTE_LOCAL_SCREEN">This Computer</div>
+    <div id="REMOTE_UNAVAILABLE_SCREEN">The screen is currently unavailable.</div>
+    <div id="REMOTE_CONNECT_SCREEN_ERROR">Failed to connect to the screen.</div>
+  </div>
     <script>
       window['swfConfig'] = {"url_v8": "https:\/\/s.ytimg.com\/yts\/swfbin\/player-vfllKozwX\/cps.swf", "attrs": {"id": "movie_player"}, "params": {"allowscriptaccess": "always", "bgcolor": "#000000", "allowfullscreen": "true"}, "sts": 16000, "html5": false, "url_v9as2": "https:\/\/s.ytimg.com\/yts\/swfbin\/player-vfllKozwX\/cps.swf", "args": {"ldpj": "-6", "cr": "", "hl": "", "ssl": 1, "cver": "4", "enablejsapi": 1, "sendtmp": "1", "idpj": "-5", "fexp": "935013,936117,924616,907231,907240", "c": "TVHTML5"}, "min_version": "8.0.0", "assets": {"js": "https:\/\/s.ytimg.com\/yts\/jsbin\/html5player-vflz9bT3N.js", "css": "https:\/\/s.ytimg.com\/yts\/cssbin\/www-player-vflBWR9-0.css", "html": "\/html5_player_template"}, "sync_embed": false, "url": "https:\/\/s.ytimg.com\/yts\/swfbin\/player-vfllKozwX\/watch_as3.swf"};
       window['environment'] = {"xbox_launches": "", "xbox_drm_enabled": true, "backend_error_sw": 10, "post_play_sw": 100, "h5_exceptions_sw": 25, "xbox_purchases_enabled": true, "experiments": [935013, 936117, 924616, 929147, 929148, 925724, 936401, 906945, 929935, 929939, 939602, 939604, 936317, 920605, 912715, 919811, 935704, 931943, 911504, 921410, 920607, 913563, 901812, 932211, 932259, 934003, 934004, 938608, 938614, 940501, 934803, 936308, 924414, 924416, 939201, 900816, 916304, 902560, 934507, 907231, 907240, 936312, 906001], "network_retry": true, "player_url": "\/tv-player-vflDorfHz.js", "xbox_experiments": "935302,935300,935301,939400,939401,935303,935303,935304,935304,935304,935304,935304,939402,939403", "country": "US", "dash_enabled": true, "start_time": 1383440400, "language": null, "activity_sw": 100, "exceptions_sw": 100};

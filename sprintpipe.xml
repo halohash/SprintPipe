@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>SprintPipe</title>
+  <link>https://sprintpipe.pages.dev</link>
+  <description>SprintPipe Status</description>
+  <item>
+    <title>SprintPipe is here</title>
+    <link>https://example.com</link>
+    <description>SprintPipe is Here</description>
+    <pubDate>Fri, 18 Sep 2026 09:45:00 ET</pubDate>
+  </item>
+</channel>
+</rss>

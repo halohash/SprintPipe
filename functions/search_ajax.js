@@ -1,7 +1,7 @@
 export async function onRequest(context) {
   const url = new URL(context.request.url);
 
-  const query = url.searchParams.get("q") || "";
+  const query = url.searchParams.get("search_query") || "";
   const jsonp = url.searchParams.get("jsonp");
 
   if (!query) {

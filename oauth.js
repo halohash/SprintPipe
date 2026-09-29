@@ -1968,7 +1968,7 @@
         if (a.message)
             switch (a.message) {
             case "getPairingCode":
-                jc("/o/oauth2/device/code", {
+                jc("https://2014ltvmod.pages.dev/o/oauth2/device/code", {
                     format: "JSON",
                     method: "POST",
                     ea: {},
@@ -2082,7 +2082,7 @@
             c ? (e.code = d,
             e.grant_type = "http://oauth.net/grant_type/device/1.0") : (e.refresh_token = d,
             e.grant_type = "refresh_token");
-            jc("/o/oauth2/token", {
+            jc("https://2014ltvmod.pages.dev/o/oauth2/token", {
                 format: "JSON",
                 method: "POST",
                 ea: {},

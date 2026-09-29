@@ -1,0 +1,78 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>YouTube - Broadcast Yourself</title>
+  <style>
+    body {
+      font: 12px Arial, sans-serif;
+      background-color: #000000;
+      color: #FFFFFF;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .flash-player {
+      position:absolute;
+      width:100%;
+      height:100%;
+    }
+    h1 {
+      font-size: 150px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size:20px;
+      margin:auto;
+      text-align:justify;
+      width:31%;
+    }
+    a {
+      background: transparent;
+      color: #FFF;
+      text-decoration: underline;
+    }
+    a:hover {
+      background: #FFF;
+      color: #000;
+      text-decoration: none;
+    }
+  </style>
+    
+    <script  src="http://s.ytimg.com/yt/jsbin/www-core-vflub_lro.js"></script>
+
+    
+    <script  src="http://s.ytimg.com/yt/jsbin/www-leanback-vflE87EvD.js"></script>
+
+</head>
+<body>
+<div id="watch-player-div" class="flash-player">
+  <div id="issue">
+    <h1>☹</h1>
+      <p>
+        Leanback works best with the latest version of Flash. You appear to have an older version, but you can <a href="http://get.adobe.com/flashplayer/">download the new one from Adobe</a> to get started. Or just go <a href="http://youtube.com/?persist_app=1&amp;app=desktop">back to YouTube</a>.
+      </p>
+  </div>
+</div>
+  <script type="text/javascript">
+    var swf_args = {"el": "leanback", "ps": "leanback", "enablejsapi": "1", "sk": "ZWeG3vtZIGAnB0aFyleQ2lYFUHk_hj6SC", "iv_load_policy": "3", "cr": "US", "eurl": "http:\/\/feeds.feedburner.com\/youtube\/PKJx"};
+    var swf_url = "/watch_as3-vflPSj_0h.swf";
+    var leanback_url = "/leanback_module-vfleyJYZE.swf";
+    var fo = new SWFObject(swf_url, "movie_player", "100%", "100%", "9.0.115", "#000000");
+    fo.addParam("hasPriority", "true");
+    fo.addParam("allowFullscreen", "true");
+    fo.addParam("allowScriptAccess", "always");
+    fo.addVariable('leanback_module', leanback_url);
+    for (var x in swf_args) {
+      fo.addVariable(x, swf_args[x]);
+    }
+    fo.write("watch-player-div");
+    function onYouTubePlayerReady(playerId) {
+      var ytPlayer = document.getElementById('movie_player');
+      yt.www.leanback.init();
+    }
+  </script>
+</body>
+</html>
